@@ -31,6 +31,6 @@ class MessageReciever():
 
 if __name__ == '__main__':
     def super_method(message):
-        print 'hello with message {}'.format(message)
+        print('hello with message {}'.format(message))
 
     MessageReciever().waiting_message('new_test_queue', super_method)
