@@ -8,14 +8,14 @@ connection = pika.BlockingConnection(pika.ConnectionParameters(
 channel = connection.channel()
 
 # Создание очереди с именем hello, если ее не было
-channel.queue_declare(queue='hello')
+channel.queue_declare(queue='test_message')
 
 # Отправка сообщение с точкой обмена (для определения куда отправлять) (exchange) по умолчанию,
 # в очередь с именем hello (routing_key)
 # и с сообщением "Hello World!'
 channel.basic_publish(exchange='',
-                      routing_key='hello',
-                      body='Hello World!')
+                      routing_key='test_message',
+                      body='Hello 1c!')
 print " [x] Sent 'Hello World!'"
 
 connection.close()
