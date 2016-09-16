@@ -13,6 +13,7 @@ channel = connection.channel()
 # Проверка очереди на ее наличие, durable делает очередь устойчивой
 # Так мы можем быть уверены, что очередь task_queue не будет потеряна при перезапуске сервера RabbitMQ.
 channel.queue_declare(queue='task_queue', durable=True)
+channel.exchange_declare(exchange='1c.test.direct', type='direct')
 
 # getting a new message
 message = ' '.join(sys.argv[1:]) or "Hello World!"
